@@ -35,7 +35,6 @@
             this.lblTtl = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.titleLbl = new System.Windows.Forms.Label();
-            this.orderBtn = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlTabTitle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -134,21 +133,6 @@
             this.titleLbl.TabIndex = 1;
             this.titleLbl.Text = " FEEDBUFF";
             this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // orderBtn
-            // 
-            this.orderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderBtn.BackColor = System.Drawing.Color.White;
-            this.orderBtn.FlatAppearance.BorderSize = 0;
-            this.orderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderBtn.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderBtn.ForeColor = System.Drawing.Color.Black;
-            this.orderBtn.Location = new System.Drawing.Point(1764, 12);
-            this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(143, 34);
-            this.orderBtn.TabIndex = 0;
-            this.orderBtn.Text = "NEW ORDER";
-            this.orderBtn.UseVisualStyleBackColor = false;
             // 
             // pnlContent
             // 
@@ -308,7 +292,6 @@
             // 
             this.barPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(115)))), ((int)(((byte)(117)))));
             this.barPnl.Controls.Add(this.titleLbl);
-            this.barPnl.Controls.Add(this.orderBtn);
             this.barPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.barPnl.Location = new System.Drawing.Point(0, 0);
             this.barPnl.Name = "barPnl";
@@ -357,7 +340,6 @@
         private System.Windows.Forms.Label lblTtl;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label titleLbl;
-        private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Panel pnlTabTitle;
         private System.Windows.Forms.Panel panel2;
