@@ -28,17 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTabTitle = new System.Windows.Forms.Label();
-            this.userPicBox = new System.Windows.Forms.PictureBox();
-            this.pnlNavMid = new System.Windows.Forms.Panel();
-            this.pnlUser = new System.Windows.Forms.Panel();
-            this.lblTtl = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.titleLbl = new System.Windows.Forms.Label();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlTabTitle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlLeft = new System.Windows.Forms.Panel();
             this.btnFeedback = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
@@ -49,128 +39,35 @@
             this.pnlMid = new System.Windows.Forms.Panel();
             this.panelMidConNav = new System.Windows.Forms.Panel();
             this.barPnl = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.userPicBox)).BeginInit();
-            this.pnlUser.SuspendLayout();
-            this.pnlTabTitle.SuspendLayout();
+            this.titleLbl = new System.Windows.Forms.Label();
+            this.pnlUser = new System.Windows.Forms.Panel();
+            this.lblTtl = new System.Windows.Forms.Label();
+            this.userPicBox = new System.Windows.Forms.PictureBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.pnlNavMid = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlTabTitle = new System.Windows.Forms.Panel();
+            this.lblTabTitle = new System.Windows.Forms.Label();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
             this.pnlBack.SuspendLayout();
             this.barPnl.SuspendLayout();
+            this.pnlUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userPicBox)).BeginInit();
+            this.pnlNavMid.SuspendLayout();
+            this.pnlTabTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTabTitle
-            // 
-            this.lblTabTitle.AutoSize = true;
-            this.lblTabTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTabTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTabTitle.Location = new System.Drawing.Point(13, 9);
-            this.lblTabTitle.Name = "lblTabTitle";
-            this.lblTabTitle.Size = new System.Drawing.Size(171, 41);
-            this.lblTabTitle.TabIndex = 0;
-            this.lblTabTitle.Text = "Dashboard";
-            // 
-            // userPicBox
-            // 
-            this.userPicBox.Image = global::FeedBuffApplicatie.Properties.Resources.icons8_male_user_96;
-            this.userPicBox.Location = new System.Drawing.Point(16, 27);
-            this.userPicBox.Name = "userPicBox";
-            this.userPicBox.Size = new System.Drawing.Size(67, 57);
-            this.userPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPicBox.TabIndex = 2;
-            this.userPicBox.TabStop = false;
-            // 
-            // pnlNavMid
-            // 
-            this.pnlNavMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            this.pnlNavMid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNavMid.Location = new System.Drawing.Point(0, 119);
-            this.pnlNavMid.Name = "pnlNavMid";
-            this.pnlNavMid.Size = new System.Drawing.Size(254, 20);
-            this.pnlNavMid.TabIndex = 17;
-            // 
-            // pnlUser
-            // 
-            this.pnlUser.BackColor = System.Drawing.Color.White;
-            this.pnlUser.Controls.Add(this.lblTtl);
-            this.pnlUser.Controls.Add(this.userPicBox);
-            this.pnlUser.Controls.Add(this.lblName);
-            this.pnlUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUser.Location = new System.Drawing.Point(0, 0);
-            this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(254, 119);
-            this.pnlUser.TabIndex = 17;
-            // 
-            // lblTtl
-            // 
-            this.lblTtl.AutoSize = true;
-            this.lblTtl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTtl.ForeColor = System.Drawing.Color.Gray;
-            this.lblTtl.Location = new System.Drawing.Point(93, 55);
-            this.lblTtl.Name = "lblTtl";
-            this.lblTtl.Size = new System.Drawing.Size(62, 20);
-            this.lblTtl.TabIndex = 1;
-            this.lblTtl.Text = "Student";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblName.Location = new System.Drawing.Point(92, 27);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(119, 28);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Jan Janssen";
-            // 
-            // titleLbl
-            // 
-            this.titleLbl.AutoSize = true;
-            this.titleLbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.titleLbl.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLbl.ForeColor = System.Drawing.Color.White;
-            this.titleLbl.Location = new System.Drawing.Point(0, 0);
-            this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(232, 54);
-            this.titleLbl.TabIndex = 1;
-            this.titleLbl.Text = " FEEDBUFF";
-            this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(294, 135);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1610, 798);
-            this.pnlContent.TabIndex = 29;
-            // 
-            // pnlTabTitle
-            // 
-            this.pnlTabTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            this.pnlTabTitle.Controls.Add(this.lblTabTitle);
-            this.pnlTabTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTabTitle.ForeColor = System.Drawing.Color.Black;
-            this.pnlTabTitle.Location = new System.Drawing.Point(294, 80);
-            this.pnlTabTitle.Name = "pnlTabTitle";
-            this.pnlTabTitle.Size = new System.Drawing.Size(1610, 55);
-            this.pnlTabTitle.TabIndex = 28;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1904, 80);
+            this.panel2.Location = new System.Drawing.Point(1904, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(20, 853);
+            this.panel2.Size = new System.Drawing.Size(20, 913);
             this.panel2.TabIndex = 22;
-            // 
-            // pnlLeft
-            // 
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(274, 80);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(20, 853);
-            this.pnlLeft.TabIndex = 21;
             // 
             // btnFeedback
             // 
@@ -207,13 +104,13 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.White;
-            this.pnlNav.Controls.Add(this.pnlBack);
-            this.pnlNav.Controls.Add(this.pnlNavMid);
+            this.pnlNav.Controls.Add(this.panel3);
             this.pnlNav.Controls.Add(this.pnlUser);
+            this.pnlNav.Controls.Add(this.pnlBack);
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlNav.Location = new System.Drawing.Point(20, 80);
+            this.pnlNav.Location = new System.Drawing.Point(20, 100);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(254, 853);
+            this.pnlNav.Size = new System.Drawing.Size(254, 833);
             this.pnlNav.TabIndex = 26;
             // 
             // pnlBack
@@ -223,7 +120,6 @@
             this.pnlBack.Controls.Add(this.btnFeedup);
             this.pnlBack.Controls.Add(this.btnFeedback);
             this.pnlBack.Controls.Add(this.btnDashboard);
-            this.pnlBack.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBack.Location = new System.Drawing.Point(0, 139);
             this.pnlBack.Name = "pnlBack";
             this.pnlBack.Size = new System.Drawing.Size(254, 440);
@@ -274,7 +170,7 @@
             // 
             this.pnlMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.pnlMid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMid.Location = new System.Drawing.Point(20, 60);
+            this.pnlMid.Location = new System.Drawing.Point(20, 0);
             this.pnlMid.Name = "pnlMid";
             this.pnlMid.Size = new System.Drawing.Size(1904, 20);
             this.pnlMid.TabIndex = 24;
@@ -283,9 +179,9 @@
             // 
             this.panelMidConNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.panelMidConNav.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMidConNav.Location = new System.Drawing.Point(0, 60);
+            this.panelMidConNav.Location = new System.Drawing.Point(0, 0);
             this.panelMidConNav.Name = "panelMidConNav";
-            this.panelMidConNav.Size = new System.Drawing.Size(20, 893);
+            this.panelMidConNav.Size = new System.Drawing.Size(20, 953);
             this.panelMidConNav.TabIndex = 27;
             // 
             // barPnl
@@ -293,10 +189,135 @@
             this.barPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(115)))), ((int)(((byte)(117)))));
             this.barPnl.Controls.Add(this.titleLbl);
             this.barPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barPnl.Location = new System.Drawing.Point(0, 0);
+            this.barPnl.Location = new System.Drawing.Point(20, 20);
             this.barPnl.Name = "barPnl";
-            this.barPnl.Size = new System.Drawing.Size(1924, 60);
-            this.barPnl.TabIndex = 23;
+            this.barPnl.Size = new System.Drawing.Size(1884, 60);
+            this.barPnl.TabIndex = 30;
+            // 
+            // titleLbl
+            // 
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.titleLbl.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.ForeColor = System.Drawing.Color.White;
+            this.titleLbl.Location = new System.Drawing.Point(0, 0);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(232, 54);
+            this.titleLbl.TabIndex = 1;
+            this.titleLbl.Text = " FEEDBUFF";
+            this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlUser
+            // 
+            this.pnlUser.BackColor = System.Drawing.Color.White;
+            this.pnlUser.Controls.Add(this.lblTtl);
+            this.pnlUser.Controls.Add(this.userPicBox);
+            this.pnlUser.Controls.Add(this.lblName);
+            this.pnlUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUser.Location = new System.Drawing.Point(0, 0);
+            this.pnlUser.Name = "pnlUser";
+            this.pnlUser.Size = new System.Drawing.Size(254, 119);
+            this.pnlUser.TabIndex = 34;
+            // 
+            // lblTtl
+            // 
+            this.lblTtl.AutoSize = true;
+            this.lblTtl.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTtl.ForeColor = System.Drawing.Color.Gray;
+            this.lblTtl.Location = new System.Drawing.Point(93, 55);
+            this.lblTtl.Name = "lblTtl";
+            this.lblTtl.Size = new System.Drawing.Size(62, 20);
+            this.lblTtl.TabIndex = 1;
+            this.lblTtl.Text = "Student";
+            // 
+            // userPicBox
+            // 
+            this.userPicBox.Image = global::FeedBuffApplicatie.Properties.Resources.icons8_male_user_96;
+            this.userPicBox.Location = new System.Drawing.Point(16, 27);
+            this.userPicBox.Name = "userPicBox";
+            this.userPicBox.Size = new System.Drawing.Size(67, 57);
+            this.userPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPicBox.TabIndex = 2;
+            this.userPicBox.TabStop = false;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblName.Location = new System.Drawing.Point(92, 27);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(119, 28);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Jan Janssen";
+            // 
+            // pnlNavMid
+            // 
+            this.pnlNavMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.pnlNavMid.Controls.Add(this.panel1);
+            this.pnlNavMid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNavMid.Location = new System.Drawing.Point(20, 80);
+            this.pnlNavMid.Name = "pnlNavMid";
+            this.pnlNavMid.Size = new System.Drawing.Size(1884, 20);
+            this.pnlNavMid.TabIndex = 31;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1884, 20);
+            this.panel1.TabIndex = 32;
+            // 
+            // pnlLeft
+            // 
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(274, 100);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(20, 833);
+            this.pnlLeft.TabIndex = 34;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 119);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(254, 20);
+            this.panel3.TabIndex = 35;
+            // 
+            // pnlTabTitle
+            // 
+            this.pnlTabTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.pnlTabTitle.Controls.Add(this.lblTabTitle);
+            this.pnlTabTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTabTitle.ForeColor = System.Drawing.Color.Black;
+            this.pnlTabTitle.Location = new System.Drawing.Point(294, 100);
+            this.pnlTabTitle.Name = "pnlTabTitle";
+            this.pnlTabTitle.Size = new System.Drawing.Size(1610, 55);
+            this.pnlTabTitle.TabIndex = 35;
+            // 
+            // lblTabTitle
+            // 
+            this.lblTabTitle.AutoSize = true;
+            this.lblTabTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTabTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTabTitle.Location = new System.Drawing.Point(13, 9);
+            this.lblTabTitle.Name = "lblTabTitle";
+            this.lblTabTitle.Size = new System.Drawing.Size(171, 41);
+            this.lblTabTitle.TabIndex = 0;
+            this.lblTabTitle.Text = "Dashboard";
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(294, 155);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1610, 778);
+            this.pnlContent.TabIndex = 36;
             // 
             // FormMain
             // 
@@ -306,44 +327,35 @@
             this.ClientSize = new System.Drawing.Size(1924, 953);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlTabTitle);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.pnlNav);
+            this.Controls.Add(this.pnlNavMid);
+            this.Controls.Add(this.barPnl);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBottem);
             this.Controls.Add(this.pnlMid);
             this.Controls.Add(this.panelMidConNav);
-            this.Controls.Add(this.barPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.userPicBox)).EndInit();
-            this.pnlUser.ResumeLayout(false);
-            this.pnlUser.PerformLayout();
-            this.pnlTabTitle.ResumeLayout(false);
-            this.pnlTabTitle.PerformLayout();
             this.pnlNav.ResumeLayout(false);
             this.pnlBack.ResumeLayout(false);
             this.barPnl.ResumeLayout(false);
             this.barPnl.PerformLayout();
+            this.pnlUser.ResumeLayout(false);
+            this.pnlUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userPicBox)).EndInit();
+            this.pnlNavMid.ResumeLayout(false);
+            this.pnlTabTitle.ResumeLayout(false);
+            this.pnlTabTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTabTitle;
-        private System.Windows.Forms.PictureBox userPicBox;
-        private System.Windows.Forms.Panel pnlNavMid;
-        private System.Windows.Forms.Panel pnlUser;
-        private System.Windows.Forms.Label lblTtl;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label titleLbl;
-        private System.Windows.Forms.Panel pnlContent;
-        private System.Windows.Forms.Panel pnlTabTitle;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel pnlNav;
@@ -354,5 +366,17 @@
         private System.Windows.Forms.Panel pnlMid;
         private System.Windows.Forms.Panel panelMidConNav;
         private System.Windows.Forms.Panel barPnl;
+        private System.Windows.Forms.Label titleLbl;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlUser;
+        private System.Windows.Forms.Label lblTtl;
+        private System.Windows.Forms.PictureBox userPicBox;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Panel pnlNavMid;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlLeft;
+        private System.Windows.Forms.Panel pnlTabTitle;
+        private System.Windows.Forms.Label lblTabTitle;
+        private System.Windows.Forms.Panel pnlContent;
     }
 }
