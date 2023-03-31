@@ -16,6 +16,7 @@ namespace FeedBuffApplicatie.Forms
         {
             InitializeComponent();
 
+            RoundButton(btnDashboard, 10);
             RoundButton(btnFeedback, 10);
             RoundButton(btnFeedforward, 10);
             RoundButton(btnFeedback, 10);
