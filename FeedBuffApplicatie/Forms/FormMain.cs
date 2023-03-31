@@ -17,10 +17,10 @@ namespace FeedBuffApplicatie.Forms
             InitializeComponent();
 
             RoundButton(btnDashboard, 10);
-            RoundButton(btnFeedback, 10);
-            RoundButton(btnFeedforward, 10);
-            RoundButton(btnFeedback, 10);
             RoundButton(btnFeedup, 10);
+            RoundButton(btnFeedforward, 10);
+            RoundButton(btnFeedup, 10);
+            RoundButton(btnFeedback, 10);
             ButtonColorReset(btnDashboard);
 
             lblTabTitle.Text = "DASHBOARD";
@@ -123,8 +123,8 @@ namespace FeedBuffApplicatie.Forms
             Color inactiveColor = Color.Black;
             Color btnColor = Color.FromArgb(255, 255, 255);
 
-            btnFeedup.BackColor = btnColor;
-            btnFeedup.ForeColor = inactiveColor;
+            btnFeedback.BackColor = btnColor;
+            btnFeedback.ForeColor = inactiveColor;
 
             btnFeedforward.BackColor = btnColor;
             btnFeedforward.ForeColor = inactiveColor;
@@ -132,8 +132,8 @@ namespace FeedBuffApplicatie.Forms
             btnDashboard.BackColor = btnColor;
             btnDashboard.ForeColor = inactiveColor;
 
-            btnFeedback.BackColor = btnColor;
-            btnFeedback.ForeColor = inactiveColor;
+            btnFeedup.BackColor = btnColor;
+            btnFeedup.ForeColor = inactiveColor;
 
             button.BackColor = activeColor;
             button.ForeColor = Color.White;
@@ -154,17 +154,6 @@ namespace FeedBuffApplicatie.Forms
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            ButtonColorReset(btnFeedback);
-
-            lblTabTitle.Text = "FEEDBACK";
-            this.pnlContent.Controls.Clear();
-            FormFeedback formFeedback = new FormFeedback() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(formFeedback);
-            formFeedback.Show();
-        }
-
-        private void btnFeedup_Click(object sender, EventArgs e)
-        {
             ButtonColorReset(btnFeedup);
 
             lblTabTitle.Text = "FEEDUP";
@@ -172,6 +161,17 @@ namespace FeedBuffApplicatie.Forms
             FormFeedup formFeedup = new FormFeedup() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formFeedup);
             formFeedup.Show();
+        }
+
+        private void btnFeedup_Click(object sender, EventArgs e)
+        {
+            ButtonColorReset(btnFeedback);
+
+            lblTabTitle.Text = "FEEDBACK";
+            this.pnlContent.Controls.Clear();
+            FormFeedback formFeedback = new FormFeedback() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(formFeedback);
+            formFeedback.Show();
         }
 
         private void btnFeedforward_Click(object sender, EventArgs e)
