@@ -54,6 +54,7 @@
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Studygoal.cs" />
     <Compile Include="Classes\Supervisor.cs" />
+    <Compile Include="DAL\DAL.cs" />
     <Compile Include="Forms\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,7 +135,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
