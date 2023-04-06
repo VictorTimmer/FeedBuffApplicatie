@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Assignment.cs" />
     <Compile Include="Classes\Feedback.cs" />
     <Compile Include="Classes\Feedforward.cs" />
     <Compile Include="Classes\Feeditem.cs" />
     <Compile Include="Classes\Feedup.cs" />
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\Studygoal.cs" />
+    <Compile Include="Classes\Supervisor.cs" />
     <Compile Include="Forms\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
