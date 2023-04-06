@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Feedback.cs" />
+    <Compile Include="Classes\Feedforward.cs" />
+    <Compile Include="Classes\Feeditem.cs" />
+    <Compile Include="Classes\Feedup.cs" />
+    <Compile Include="Classes\Student.cs" />
     <Compile Include="Forms\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +131,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
     <Folder Include="DAL\" />
     <Folder Include="Image\" />
   </ItemGroup>
