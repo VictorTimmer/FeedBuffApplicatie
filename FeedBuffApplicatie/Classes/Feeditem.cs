@@ -41,13 +41,7 @@ namespace FeedBuffApplicatie.Classes
 
         public Feeditem(int id, string creationDate, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId)
         {
-            Id = id;
-            CreationDate = creationDate;
-            ApprovedBy = approvedBy;
-            ReviewedBy = reviewedBy;
-            StudentId = studentId;
-            AssignmentId = assignmentId;
-            SupervisorId = supervisorId;
+           
         }
 
 

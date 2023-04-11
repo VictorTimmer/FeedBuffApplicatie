@@ -10,7 +10,7 @@ namespace FeedBuffApplicatie.Classes
     public class Feedforward : Feeditem
     {
 
-        public int Id { get; set; }
+        public int Id { get; }
         public string Description { get; set; } 
 
         public DateTime CreationTime { get; set; }
