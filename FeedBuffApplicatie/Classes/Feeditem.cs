@@ -39,10 +39,10 @@ namespace FeedBuffApplicatie.Classes
             SupervisorId = supervisorId;
         }
 
-        public Feeditem(int id, string creationDate, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId)
-        {
+        //public Feeditem(int id, string creationDate, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId)
+        //{
            
-        }
+        //}
 
 
         public void DeleteFeeditem()

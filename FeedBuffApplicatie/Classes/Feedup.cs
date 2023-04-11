@@ -23,7 +23,7 @@ namespace FeedBuffApplicatie.Classes
             Creationtime = creationtime;
         }
 
-        public Feedup(int id, string creationDate, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId) : base(id, creationDate, approvedBy, reviewedBy, studentId, assignmentId, supervisorId)
+        public Feedup(int id, string creationDate, bool completed, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId) : base(id, creationDate, completed, approvedBy, reviewedBy, studentId, assignmentId, supervisorId)
         {
 
         }
