@@ -8,7 +8,7 @@ namespace FeedBuffApplicatie.Classes
 {
     public class Studygoal
     {
-        public int Id { get; set; }
+        public int Id { get; }
         public string Description { get; set; }
 
         public DateTime CreationTime { get; set; }

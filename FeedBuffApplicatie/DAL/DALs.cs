@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace FeedBuffApplicatie.DAL
         public StudygoalDAL studygoalDAL;
         public UserDAL userDAL;
         public FeeditemDAL feeditemDAL;
+        public StudentDAL studentDAL;
 
 
         public DALs() 
@@ -23,6 +25,7 @@ namespace FeedBuffApplicatie.DAL
             this.assignmentDAL = new AssignmentDAL(connectionString, this);
             this.studygoalDAL = new StudygoalDAL(connectionString, this);
             this.userDAL = new UserDAL(connectionString, this);
+            this.studentDAL = new StudentDAL(connectionString, this);
             //this.feeditemDAL = new FeeditemDAL(connectionString, this);
         }
     }
