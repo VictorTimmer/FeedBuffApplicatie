@@ -82,25 +82,6 @@ namespace FeedBuffApplicatie.DAL
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public void UpdateStudent(Student student, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
@@ -124,6 +105,7 @@ namespace FeedBuffApplicatie.DAL
             }
             if (refreshData) GetAllStudents();
         }
+
 
         public void DeleteStudent(Student student, Boolean refreshData = false)
         {

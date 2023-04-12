@@ -24,5 +24,10 @@ namespace FeedBuffApplicatie.Classes
         }
 
 
+        public void AddUser() 
+        {
+        
+        }
+
     }
 }
