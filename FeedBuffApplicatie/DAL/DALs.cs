@@ -20,6 +20,7 @@ namespace FeedBuffApplicatie.DAL
         {
             this.assignmentDAL = new AssignmentDAL(connectionString, this);
             this.studygoalDAL = new StudygoalDAL(connectionString, this);
+            this.userDAL = new UserDAL(connectionString, this);
         }
     }
 }

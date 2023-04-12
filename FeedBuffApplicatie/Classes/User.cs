@@ -12,7 +12,5 @@ namespace FeedBuffApplicatie.Classes
         public int Id { get; } 
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        
-
     }
 }

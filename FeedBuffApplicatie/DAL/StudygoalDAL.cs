@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace FeedBuffApplicatie.DAL
 {
-    internal class StudygoalDAL
+    public class StudygoalDAL
     {
         public List<Studygoal> Studygoals = new List<Studygoal>();
         public string connectionString;
         public DALs dals;
 
-        //publicStudygoalDAL(string connectionString, DALs dals)
-        //{
-        //    this.connectionString = connectionString;
-        //    this.dals = dals;
+        public StudygoalDAL(string connectionString, DALs dals)
+        {
+            this.connectionString = connectionString;
+            this.dals = dals;
 
-        //    GetAllStudygoals();
-        //}
+            GetAllStudygoals();
+        }
 
         public void GetAllStudygoals()
         {
@@ -39,13 +39,13 @@ namespace FeedBuffApplicatie.DAL
                             while (columns.Read())
                             {
                                 this.Studygoals.Add(new Studygoal(
-                                    Int32.Parse(columns["Id"].ToString()),
-                                    columns["Description"].ToString(),
-                                    DateTime.Parse(columns["CreationTime"].ToString()),
-                                    columns["Reflection"].ToString(),
-                                    Int32.Parse(columns["Priority"].ToString()),
-                                    columns["Completed"].ToString(),
-                                    columns["Supergoal"].ToString()
+                                    Int32.Parse(columns[0].ToString()),
+                                    columns[1].ToString(),
+                                    DateTime.Parse(columns[2].ToString()),
+                                    columns[3].ToString(),
+                                    Int32.Parse(columns[4].ToString()),
+                                    columns[5].ToString(),
+                                    columns[6].ToString()
                                 ));
                             }
                         }
@@ -84,19 +84,21 @@ namespace FeedBuffApplicatie.DAL
 
 
 
-        public void UpdateStudygoal(Assignment assignment, Boolean refreshData = false)
+        public void UpdateStudygoal(Studygoal studygoal, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE Studygoal SET description = @description, deadline = @deadline, completed = @completed WHERE id = @id", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE Studygoal SET description = @description, creationTime = @creationTime, reflection = @reflection, completed = @completed, supergoal = @supergoal WHERE id = @id", connection))
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@id", assignment.Id);
-                        command.Parameters.AddWithValue("@description", assignment.Description);
-                        command.Parameters.AddWithValue("@deadline", assignment.Deadline);
-                        command.Parameters.AddWithValue("@completed", assignment.Completed);
+                        command.Parameters.AddWithValue("@description", studygoal.Description);
+                        command.Parameters.AddWithValue("@creationTime", studygoal.CreationTime);
+                        command.Parameters.AddWithValue("@reflection", studygoal.Reflection);
+                        command.Parameters.AddWithValue("@priority", studygoal.Priority);
+                        command.Parameters.AddWithValue("@completed", studygoal.Completed);
+                        command.Parameters.AddWithValue("@supergoal", studygoal.Supergoal);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
@@ -106,7 +108,7 @@ namespace FeedBuffApplicatie.DAL
             if (refreshData) GetAllStudygoals();
         }
 
-        public void DeleteStudygoal(Assignment assignment, Boolean refreshData = false)
+        public void DeleteStudygoal(Studygoal studygoal, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -115,7 +117,7 @@ namespace FeedBuffApplicatie.DAL
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@id", assignment.Id);
+                        command.Parameters.AddWithValue("@id", studygoal.Id);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
