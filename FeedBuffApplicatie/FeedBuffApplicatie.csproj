@@ -57,6 +57,9 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="DAL\AssignmentDAL.cs" />
     <Compile Include="DAL\DALs.cs" />
+    <Compile Include="DAL\FeeditemDAL.cs" />
+    <Compile Include="DAL\StudygoalDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Forms\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
