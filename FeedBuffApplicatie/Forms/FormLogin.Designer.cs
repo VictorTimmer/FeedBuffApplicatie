@@ -65,13 +65,14 @@
             this.titleLbl.ForeColor = System.Drawing.Color.White;
             this.titleLbl.Location = new System.Drawing.Point(0, 0);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(221, 54);
+            this.titleLbl.Size = new System.Drawing.Size(199, 54);
             this.titleLbl.TabIndex = 1;
-            this.titleLbl.Text = "FEEDBUFF";
+            this.titleLbl.Text = "FEEDBUF";
             this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlBottem
             // 
+            this.pnlBottem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.pnlBottem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottem.Location = new System.Drawing.Point(20, 370);
             this.pnlBottem.Name = "pnlBottem";
@@ -80,6 +81,7 @@
             // 
             // pnlRight
             // 
+            this.pnlRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(402, 20);
             this.pnlRight.Name = "pnlRight";
@@ -97,6 +99,7 @@
             // 
             // pnlMid
             // 
+            this.pnlMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.pnlMid.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMid.Location = new System.Drawing.Point(0, 0);
             this.pnlMid.Name = "pnlMid";
