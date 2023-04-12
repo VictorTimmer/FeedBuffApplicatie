@@ -15,12 +15,14 @@ namespace FeedBuffApplicatie.DAL
         public AssignmentDAL assignmentDAL;
         public StudygoalDAL studygoalDAL;
         public UserDAL userDAL;
+        public FeeditemDAL feeditemDAL;
 
         public DALs() 
         {
             this.assignmentDAL = new AssignmentDAL(connectionString, this);
             this.studygoalDAL = new StudygoalDAL(connectionString, this);
             this.userDAL = new UserDAL(connectionString, this);
+            //this.feeditemDAL = new FeeditemDAL(connectionString, this);
         }
     }
 }

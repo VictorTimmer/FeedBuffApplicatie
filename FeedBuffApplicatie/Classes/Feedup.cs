@@ -9,8 +9,6 @@ namespace FeedBuffApplicatie.Classes
     public class Feedup : Feeditem
     {
 
-        public int Id { get;} 
-
       public string Description { get; set; }
 
       public DateTime Creationtime { get; set; }
