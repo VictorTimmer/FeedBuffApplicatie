@@ -17,6 +17,7 @@ namespace FeedBuffApplicatie.DAL
         public UserDAL userDAL;
         public FeeditemDAL feeditemDAL;
 
+
         public DALs() 
         {
             this.assignmentDAL = new AssignmentDAL(connectionString, this);

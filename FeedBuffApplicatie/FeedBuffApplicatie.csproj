@@ -58,6 +58,7 @@
     <Compile Include="DAL\AssignmentDAL.cs" />
     <Compile Include="DAL\DALs.cs" />
     <Compile Include="DAL\FeeditemDAL.cs" />
+    <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\StudygoalDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Forms\FormDashboard.cs">
