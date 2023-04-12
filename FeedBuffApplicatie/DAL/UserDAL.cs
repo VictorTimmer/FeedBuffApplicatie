@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FeedBuffApplicatie.DAL
 {
-    internal class UserDAL
+    public class UserDAL
     {
+
     }
 }

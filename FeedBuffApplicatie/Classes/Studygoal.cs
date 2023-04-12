@@ -31,7 +31,6 @@ namespace FeedBuffApplicatie.Classes
 
         public void AddStudygoal()
         { 
-        
         }
     }
 }
