@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace FeedBuffApplicatie.DAL
 {
-    public class FeeditemDAL
+    public class FeedupDAL
     {
-        public List<Feeditem> Feeditems = new List<Feeditem>();
+        public List<Feedup> Feedups = new List<Feedup>();
         public string connectionString;
-        private DALs dals;
-        private string tableName = "FeedItem";
+        public DALs dals;
+        private string tableName = "FeedUp";
 
-        public FeeditemDAL(string connectionString, DALs dals)
+        public FeedupDAL(string connectionString, DALs dals)
         {
             this.connectionString = connectionString;
             this.dals = dals;
@@ -38,21 +38,27 @@ namespace FeedBuffApplicatie.DAL
                     using (SqlDataReader columns = command.ExecuteReader())
                     {
                         // Clear out the old list of assignment (have the new ones)
-                        this.Feeditems.Clear();
+                        this.Feedups.Clear();
 
                         try
                         {
                             while (columns.Read())
                             {
-                                this.Feeditems.Add(new Feeditem(
+                                // Add relation
+                                var baseFeeditem = this.dals.feeditemDAL.Feeditems.Find(feeditem => feeditem.Id == Int32.Parse(columns[1].ToString()));
+
+                                this.Feedups.Add(new Feedup(
                                     Int32.Parse(columns[0].ToString()),
-                                    DateTime.Parse(columns[1].ToString()),
-                                    Boolean.Parse(columns[2].ToString()),
-                                    Int32.Parse(columns[3].ToString()),
-                                    Int32.Parse(columns[4].ToString()),
-                                    Int32.Parse(columns[5].ToString()),
-                                    Int32.Parse(columns[6].ToString()),
-                                    columns[7].ToString()
+                                    baseFeeditem.CreationDate,
+                                    baseFeeditem.Completed,
+                                    baseFeeditem.ApprovedBy,
+                                    baseFeeditem.AssignmentId,
+                                    baseFeeditem.SupervisorId,
+                                    baseFeeditem.StudentId,
+                                    baseFeeditem.Contents,
+                                    Int32.Parse(columns[1].ToString()),
+                                    Int32.Parse(columns[2].ToString()),
+                                    columns[3].ToString()
                                 ));
                             }
                         }
@@ -64,23 +70,19 @@ namespace FeedBuffApplicatie.DAL
         }
 
 
-        public void Insert(Feeditem feeditem, Boolean refreshData = false)
+        public void Insert(Feedup feedup, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("INSERT INTO " + tableName + " VALUES(@creationDate, @completed, @approvedBy, @assignmentId, @supervisorId, @studentId, @contents)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO " + tableName + " VALUES(@feedItemId, @priority, @reflection)", connection))
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@creationDate", feeditem.CreationDate);
-                        command.Parameters.AddWithValue("@completed", feeditem.Completed);
-                        command.Parameters.AddWithValue("@approvedBy", feeditem.ApprovedBy);
-                        command.Parameters.AddWithValue("@assignmentId", feeditem.AssignmentId);
-                        command.Parameters.AddWithValue("@supervisorId", feeditem.SupervisorId);
-                        command.Parameters.AddWithValue("@studentId", feeditem.StudentId);
-                        command.Parameters.AddWithValue("@contents", feeditem.Contents);
+                        command.Parameters.AddWithValue("@feedItemId", feedup.FeeditemId);
+                        command.Parameters.AddWithValue("@priority", feedup.Priority);
+                        command.Parameters.AddWithValue("@reflection", feedup.Reflection);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
@@ -93,23 +95,19 @@ namespace FeedBuffApplicatie.DAL
 
 
 
-        public void Update(Feeditem feeditem, Boolean refreshData = false)
+        public void Update(Feedup feedup, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE " + tableName + " SET creationDate = @creationDate, completed = @completed, approvedBy = @approvedBy, reviewedBy = @reviewedBy, studentId = @studentId, assignmentId = @assignmentId, supervisorId = @supervisorId, type = @type WHERE id = @id", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE " + tableName + " SET feedItemId = @feedItemId, priority = @priority, reflection = @reflection WHERE id = @id", connection))
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@id", feeditem.Id);
-                        command.Parameters.AddWithValue("@creationDate", feeditem.CreationDate);
-                        command.Parameters.AddWithValue("@completed", feeditem.Completed);
-                        command.Parameters.AddWithValue("@approvedBy", feeditem.ApprovedBy);
-                        command.Parameters.AddWithValue("@assignmentId", feeditem.AssignmentId);
-                        command.Parameters.AddWithValue("@supervisorId", feeditem.SupervisorId);
-                        command.Parameters.AddWithValue("@studentId", feeditem.StudentId);
-                        command.Parameters.AddWithValue("@contents", feeditem.Contents);
+                        command.Parameters.AddWithValue("@id", feedup.Id);
+                        command.Parameters.AddWithValue("@feedItemId", feedup.FeeditemId);
+                        command.Parameters.AddWithValue("@priority", feedup.Priority);
+                        command.Parameters.AddWithValue("@reflection", feedup.Reflection);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
@@ -119,7 +117,7 @@ namespace FeedBuffApplicatie.DAL
             if (refreshData) GetAll();
         }
 
-        public void Delete(Feeditem feeditem, Boolean refreshData = false)
+        public void Delete(Feedup feedup, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -128,7 +126,7 @@ namespace FeedBuffApplicatie.DAL
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@id", feeditem.Id);
+                        command.Parameters.AddWithValue("@id", feedup.Id);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }

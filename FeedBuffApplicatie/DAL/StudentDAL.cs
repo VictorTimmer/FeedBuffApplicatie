@@ -31,7 +31,7 @@ namespace FeedBuffApplicatie.DAL
                 {
                     using (SqlDataReader columns = command.ExecuteReader())
                     {
-                        // Clear out the old list of assignment (have the new ones)
+                        // Clear out the old list of students (have the new ones)
                         this.Students.Clear();
 
                         try

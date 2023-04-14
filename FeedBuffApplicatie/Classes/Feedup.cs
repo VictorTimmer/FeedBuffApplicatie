@@ -9,22 +9,16 @@ namespace FeedBuffApplicatie.Classes
     public class Feedup : Feeditem
     {
 
-      public string Description { get; set; }
+        public int FeeditemId { get; set; }
+        public int Priority { get; set; }
+        public string Reflection { get; set; }
 
-      public DateTime Creationtime { get; set; }
 
-
-        public void Feeditem(string description, DateTime creationtime)
+        public Feedup(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId, int priority, string reflection) : base(id, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
-            
-            Description = description;
-            Creationtime = creationtime;
+            FeeditemId = feeditemId;
+            Priority = priority;
+            Reflection = reflection;
         }
-
-        public Feedup(int id, string creationDate, bool completed, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId) : base(id, creationDate, completed, approvedBy, reviewedBy, studentId, assignmentId, supervisorId)
-        {
-
-        }
-
     }
 }

@@ -9,21 +9,14 @@ namespace FeedBuffApplicatie.Classes
     public class Feedback : Feeditem
     {
 
-        public string Description { get; set; }
-        public string Status { get; set; }
-        public DateTime CreationTime { get; set; }
+        public int FeeditemId { get; set; }
+        public string Notes { get; set; }
 
 
-        public void  Feeditem(string description, string status, DateTime creationTime)
+        public Feedback(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId, string notes) : base(id, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
-            
-            Description = description;
-            Status = status;
-            CreationTime = creationTime;
-        }
-
-        public Feedback(int id, string creationDate, bool completed, string approvedBy, string reviewedBy, int studentId, int assignmentId, int supervisorId) : base(id, creationDate, completed, approvedBy, reviewedBy, studentId, assignmentId, supervisorId)
-        {
+            FeeditemId = feeditemId;
+            Notes = notes;
         }
 
 

@@ -28,114 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonDiscard = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCreate = new System.Windows.Forms.Button();
-            this.dgvAssignment = new System.Windows.Forms.DataGridView();
+            this.buttonDeleteFeedForward = new System.Windows.Forms.Button();
+            this.buttonDiscardFeedForward = new System.Windows.Forms.Button();
+            this.buttonSaveFeedForward = new System.Windows.Forms.Button();
+            this.buttonCreateFeedForward = new System.Windows.Forms.Button();
+            this.dgvFeedforward = new System.Windows.Forms.DataGridView();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
-            this.labelCompleted = new System.Windows.Forms.Label();
-            this.checkBoxCompleted = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).BeginInit();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedforward)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonDelete
+            // buttonDeleteFeedForward
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(502, 328);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(86, 23);
-            this.buttonDelete.TabIndex = 0;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDeleteFeedForward.AllowDrop = true;
+            this.buttonDeleteFeedForward.Location = new System.Drawing.Point(502, 328);
+            this.buttonDeleteFeedForward.Name = "buttonDeleteFeedForward";
+            this.buttonDeleteFeedForward.Size = new System.Drawing.Size(86, 23);
+            this.buttonDeleteFeedForward.TabIndex = 0;
+            this.buttonDeleteFeedForward.Text = "Delete";
+            this.buttonDeleteFeedForward.UseVisualStyleBackColor = true;
             // 
-            // buttonDiscard
+            // buttonDiscardFeedForward
             // 
-            this.buttonDiscard.Location = new System.Drawing.Point(410, 328);
-            this.buttonDiscard.Name = "buttonDiscard";
-            this.buttonDiscard.Size = new System.Drawing.Size(86, 23);
-            this.buttonDiscard.TabIndex = 1;
-            this.buttonDiscard.Text = "Discard";
-            this.buttonDiscard.UseVisualStyleBackColor = true;
+            this.buttonDiscardFeedForward.AllowDrop = true;
+            this.buttonDiscardFeedForward.Location = new System.Drawing.Point(410, 328);
+            this.buttonDiscardFeedForward.Name = "buttonDiscardFeedForward";
+            this.buttonDiscardFeedForward.Size = new System.Drawing.Size(86, 23);
+            this.buttonDiscardFeedForward.TabIndex = 1;
+            this.buttonDiscardFeedForward.Text = "Discard";
+            this.buttonDiscardFeedForward.UseVisualStyleBackColor = true;
             // 
-            // buttonSave
+            // buttonSaveFeedForward
             // 
-            this.buttonSave.Location = new System.Drawing.Point(502, 299);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(86, 23);
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSaveFeedForward.AllowDrop = true;
+            this.buttonSaveFeedForward.Location = new System.Drawing.Point(502, 299);
+            this.buttonSaveFeedForward.Name = "buttonSaveFeedForward";
+            this.buttonSaveFeedForward.Size = new System.Drawing.Size(86, 23);
+            this.buttonSaveFeedForward.TabIndex = 2;
+            this.buttonSaveFeedForward.Text = "Save";
+            this.buttonSaveFeedForward.UseVisualStyleBackColor = true;
             // 
-            // buttonCreate
+            // buttonCreateFeedForward
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(410, 299);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(86, 23);
-            this.buttonCreate.TabIndex = 3;
-            this.buttonCreate.Text = "Create";
-            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreateFeedForward.AllowDrop = true;
+            this.buttonCreateFeedForward.Location = new System.Drawing.Point(410, 299);
+            this.buttonCreateFeedForward.Name = "buttonCreateFeedForward";
+            this.buttonCreateFeedForward.Size = new System.Drawing.Size(86, 23);
+            this.buttonCreateFeedForward.TabIndex = 3;
+            this.buttonCreateFeedForward.Text = "Create";
+            this.buttonCreateFeedForward.UseVisualStyleBackColor = true;
             // 
-            // dgvAssignment
+            // dgvFeedforward
             // 
-            this.dgvAssignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAssignment.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgvAssignment.Location = new System.Drawing.Point(12, 12);
-            this.dgvAssignment.Name = "dgvAssignment";
-            this.dgvAssignment.Size = new System.Drawing.Size(576, 241);
-            this.dgvAssignment.TabIndex = 4;
+            this.dgvFeedforward.AllowDrop = true;
+            this.dgvFeedforward.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFeedforward.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgvFeedforward.Location = new System.Drawing.Point(12, 12);
+            this.dgvFeedforward.Name = "dgvFeedforward";
+            this.dgvFeedforward.Size = new System.Drawing.Size(561, 150);
+            this.dgvFeedforward.TabIndex = 4;
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(87, 272);
+            this.textBoxDescription.AllowDrop = true;
+            this.textBoxDescription.Location = new System.Drawing.Point(90, 291);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(200, 20);
             this.textBoxDescription.TabIndex = 5;
             // 
             // labelDescription
             // 
+            this.labelDescription.AllowDrop = true;
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(12, 276);
+            this.labelDescription.Location = new System.Drawing.Point(12, 291);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(60, 13);
+            this.labelDescription.Size = new System.Drawing.Size(59, 13);
             this.labelDescription.TabIndex = 6;
-            this.labelDescription.Text = "Description";
+            this.labelDescription.Text = "Created By";
             // 
             // labelDate
             // 
+            this.labelDate.AllowDrop = true;
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(12, 307);
+            this.labelDate.Location = new System.Drawing.Point(12, 317);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(49, 13);
+            this.labelDate.Size = new System.Drawing.Size(72, 13);
             this.labelDate.TabIndex = 7;
-            this.labelDate.Text = "Deadline";
+            this.labelDate.Text = "Creation Time";
             // 
             // dateTimePickerDate
             // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(87, 303);
+            this.dateTimePickerDate.AllowDrop = true;
+            this.dateTimePickerDate.Location = new System.Drawing.Point(90, 317);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerDate.TabIndex = 8;
             // 
-            // labelCompleted
+            // richTextBox1
             // 
-            this.labelCompleted.AutoSize = true;
-            this.labelCompleted.Location = new System.Drawing.Point(12, 336);
-            this.labelCompleted.Name = "labelCompleted";
-            this.labelCompleted.Size = new System.Drawing.Size(57, 13);
-            this.labelCompleted.TabIndex = 9;
-            this.labelCompleted.Text = "Completed";
+            this.richTextBox1.Location = new System.Drawing.Point(90, 178);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(200, 96);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
             // 
-            // checkBoxCompleted
+            // label1
             // 
-            this.checkBoxCompleted.AutoSize = true;
-            this.checkBoxCompleted.Location = new System.Drawing.Point(87, 335);
-            this.checkBoxCompleted.Name = "checkBoxCompleted";
-            this.checkBoxCompleted.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxCompleted.TabIndex = 10;
-            this.checkBoxCompleted.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Feed Forward";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(371, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Reviewed By";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(374, 197);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(374, 233);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(76, 17);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Completed";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FormFeedforward
             // 
@@ -143,22 +180,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.checkBoxCompleted);
-            this.Controls.Add(this.labelCompleted);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dateTimePickerDate);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.dgvAssignment);
-            this.Controls.Add(this.buttonCreate);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.buttonDiscard);
-            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.dgvFeedforward);
+            this.Controls.Add(this.buttonCreateFeedForward);
+            this.Controls.Add(this.buttonSaveFeedForward);
+            this.Controls.Add(this.buttonDiscardFeedForward);
+            this.Controls.Add(this.buttonDeleteFeedForward);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormFeedforward";
             this.Text = "FormFeedforward";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedforward)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,16 +206,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonDiscard;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.DataGridView dgvAssignment;
+        private System.Windows.Forms.Button buttonDeleteFeedForward;
+        private System.Windows.Forms.Button buttonDiscardFeedForward;
+        private System.Windows.Forms.Button buttonSaveFeedForward;
+        private System.Windows.Forms.Button buttonCreateFeedForward;
+        private System.Windows.Forms.DataGridView dgvFeedforward;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
-        private System.Windows.Forms.Label labelCompleted;
-        private System.Windows.Forms.CheckBox checkBoxCompleted;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

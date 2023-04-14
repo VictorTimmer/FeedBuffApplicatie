@@ -52,15 +52,22 @@
     <Compile Include="Classes\Feeditem.cs" />
     <Compile Include="Classes\Feedup.cs" />
     <Compile Include="Classes\Student.cs" />
-    <Compile Include="Classes\Studygoal.cs" />
     <Compile Include="Classes\Supervisor.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="DAL\AssignmentDAL.cs" />
     <Compile Include="DAL\DALs.cs" />
+    <Compile Include="DAL\FeedbackDAL.cs" />
+    <Compile Include="DAL\FeedupDAL.cs" />
+    <Compile Include="DAL\FeedforwardDAL.cs" />
     <Compile Include="DAL\FeeditemDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
-    <Compile Include="DAL\StudygoalDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Forms\FormAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAssignment.Designer.cs">
+      <DependentUpon>FormAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormAssignment.resx">
+      <DependentUpon>FormAssignment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </EmbeddedResource>

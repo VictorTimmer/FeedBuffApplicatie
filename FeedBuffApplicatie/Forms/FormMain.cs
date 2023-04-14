@@ -12,6 +12,7 @@ namespace FeedBuffApplicatie.Forms
 {
     public partial class FormMain : Form
     {
+        public DAL.DALs dals = new DAL.DALs();
         public FormMain()
         {
             InitializeComponent();
@@ -169,7 +170,7 @@ namespace FeedBuffApplicatie.Forms
 
             lblTabTitle.Text = "FEEDBACK";
             this.pnlContent.Controls.Clear();
-            FormFeedback formFeedback = new FormFeedback() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormFeedback formFeedback = new FormFeedback(dals) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formFeedback);
             formFeedback.Show();
         }
@@ -183,6 +184,18 @@ namespace FeedBuffApplicatie.Forms
             FormFeedforward formFeedforward = new FormFeedforward() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formFeedforward);
             formFeedforward.Show();
+        }
+
+        private void btnAssigment_Click(object sender, EventArgs e)
+        {
+            ButtonColorReset(btnAssigment);
+
+            lblTabTitle.Text = "ASSIGMENT";
+            this.pnlContent.Controls.Clear();
+            FormAssignment formAssignment = new FormAssignment() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(formAssignment);
+            formAssignment.Show();
+
         }
     }
 }
