@@ -136,6 +136,9 @@ namespace FeedBuffApplicatie.Forms
             btnFeedup.BackColor = btnColor;
             btnFeedup.ForeColor = inactiveColor;
 
+            btnAssignment.BackColor = btnColor;
+            btnAssignment.ForeColor = inactiveColor;
+
             button.BackColor = activeColor;
             button.ForeColor = Color.White;
         }
@@ -186,16 +189,15 @@ namespace FeedBuffApplicatie.Forms
             formFeedforward.Show();
         }
 
-        private void btnAssigment_Click(object sender, EventArgs e)
+        private void btnAssignment_Click(object sender, EventArgs e)
         {
-            ButtonColorReset(btnAssigment);
+            ButtonColorReset(btnAssignment);
 
-            lblTabTitle.Text = "ASSIGMENT";
+            lblTabTitle.Text = "ASSIGNMENT";
             this.pnlContent.Controls.Clear();
             FormAssignment formAssignment = new FormAssignment() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formAssignment);
             formAssignment.Show();
-
         }
     }
 }
