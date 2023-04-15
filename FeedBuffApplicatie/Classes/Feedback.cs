@@ -13,7 +13,7 @@ namespace FeedBuffApplicatie.Classes
         public string Notes { get; set; }
 
 
-        public Feedback(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId, string notes) : base(id, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
+        public Feedback(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId, string notes) : base(feeditemId, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
             FeeditemId = feeditemId;
             Notes = notes;

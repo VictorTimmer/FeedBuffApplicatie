@@ -12,7 +12,7 @@ namespace FeedBuffApplicatie.Classes
         public int FeeditemId { get; set; }
 
 
-        public Feedforward(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId) : base(id, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
+        public Feedforward(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId) : base(feeditemId, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
             FeeditemId = feeditemId;
         }
