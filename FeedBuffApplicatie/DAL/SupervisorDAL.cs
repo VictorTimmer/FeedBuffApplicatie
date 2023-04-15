@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace FeedBuffApplicatie.DAL
 {
-    public class StudentDAL
+    public class SupervisorDAL
     {
-        public List<Student> Students = new List<Student>();
+        public List<Supervisor> Supervisors = new List<Supervisor>();
         public string connectionString;
         public DALs dals;
+        private string tableName = "Supervisor";
 
-        public StudentDAL(string connectionString, DALs dals)
+        public SupervisorDAL(string connectionString, DALs dals)
         {
             this.connectionString = connectionString;
             this.dals = dals;
@@ -27,12 +28,12 @@ namespace FeedBuffApplicatie.DAL
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT * FROM Student ORDER BY id", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM " + tableName + " ORDER BY id", connection))
                 {
                     using (SqlDataReader columns = command.ExecuteReader())
                     {
                         // Clear out the old list of students (have the new ones)
-                        this.Students.Clear();
+                        this.Supervisors.Clear();
 
                         try
                         {
@@ -41,7 +42,7 @@ namespace FeedBuffApplicatie.DAL
                                 // Add relation
                                 var baseFeeditem = this.dals.userDAL.Users.Find(user => user.Id == Int32.Parse(columns[1].ToString()));
 
-                                this.Students.Add(new Student(
+                                this.Supervisors.Add(new Supervisor(
                                     Int32.Parse(columns[0].ToString()),
                                     baseFeeditem.Firstname,
                                     baseFeeditem.Lastname,
@@ -60,22 +61,22 @@ namespace FeedBuffApplicatie.DAL
         }
 
 
-        public void Insert(Student student, Boolean refreshData = false)
+        public void Insert(Supervisor supervisor, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("INSERT INTO Student VALUES(@userId, @studentnumber)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO " + tableName + " VALUES(@userId, @workNumber)", connection))
                 {
 
                     // Make sure to add the base user so that the STUDENT row can refer to it
-                    student.UserId = this.dals.userDAL.InsertAndReturnId(student);
+                    supervisor.UserId = this.dals.userDAL.InsertAndReturnId(supervisor);
 
                     try
                     {
-                        command.Parameters.AddWithValue("@userId", student.UserId);
-                        command.Parameters.AddWithValue("@studetnumber", student.StudentNumber);
+                        command.Parameters.AddWithValue("@userId", supervisor.UserId);
+                        command.Parameters.AddWithValue("@workNumber", supervisor.WorkNumber);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
@@ -87,20 +88,20 @@ namespace FeedBuffApplicatie.DAL
         }
 
 
-        public void Update(Student student, Boolean refreshData = false)
+        public void Update(Supervisor supervisor, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE Student SET userId = @userId, studentnumber = @studentnumber WHERE id = @id", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE " + tableName + " SET userId = @userId, workNumber = @workNumber WHERE id = @id", connection))
                 {
-                    this.dals.userDAL.Update(student);
+                    this.dals.userDAL.Update(supervisor);
 
                     try
                     {
-                        command.Parameters.AddWithValue("@id", student.Id);
-                        command.Parameters.AddWithValue("@userId", student.UserId);
-                        command.Parameters.AddWithValue("@studetnumber", student.StudentNumber);
+                        command.Parameters.AddWithValue("@id", supervisor.Id);
+                        command.Parameters.AddWithValue("@userId", supervisor.UserId);
+                        command.Parameters.AddWithValue("@workNumber", supervisor.WorkNumber);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
@@ -111,12 +112,12 @@ namespace FeedBuffApplicatie.DAL
         }
 
 
-        public void Delete(Student student, Boolean refreshData = false)
+        public void Delete(Supervisor student, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("DELETE FROM Student WHERE id = @id", connection))
+                using (SqlCommand command = new SqlCommand("DELETE FROM " + tableName + " WHERE id = @id", connection))
                 {
                     try
                     {
