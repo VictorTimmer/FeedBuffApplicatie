@@ -6,29 +6,17 @@ using System.Threading.Tasks;
 
 namespace FeedBuffApplicatie.Classes
 {
-    public class Supervisor
+    public class Supervisor : User
     {
-        public int Id { get; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public int WorkNumber { get; set; }
+        public new int Id { get; }
+        public int UserId { get; set; }
+        public string WorkNumber { get; set; }
 
-        public Supervisor(int id, string firstname, string lastname, string username, string password, int workNumber)
+        public Supervisor(int id, string firstname, string lastname, string username, string password, int userId, string workNumber) : base(userId, firstname, lastname, username, password)
         {
             Id = id;
-            Firstname = firstname;
-            Lastname = lastname;
-            Username = username;
-            Password = password;
+            UserId = userId;
             WorkNumber = workNumber;
-        }
-
-
-        public void AddSupervisor()
-        { 
-
         }
     }
 }

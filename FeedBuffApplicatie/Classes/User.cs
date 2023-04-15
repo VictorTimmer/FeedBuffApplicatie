@@ -12,21 +12,19 @@ namespace FeedBuffApplicatie.Classes
         public int Id { get; } 
         public string Firstname { get; set; }
         public string Lastname { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
 
 
 
-        public User(int id, string firstname, string lastname)
+        public User(int id, string firstname, string lastname, string username, string password)
         {
             Id = id;
             Firstname = firstname;
             Lastname = lastname;
-        }
-
-
-        public void AddUser() 
-        {
-        
+            Username = username;
+            Password = password;
         }
 
     }
