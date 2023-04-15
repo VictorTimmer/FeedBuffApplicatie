@@ -19,10 +19,10 @@ namespace FeedBuffApplicatie.DAL
             this.connectionString = connectionString;
             this.dals = dals;
 
-            GetAllStudents();
+            GetAll();
         }
 
-        public void GetAllStudents()
+        public void GetAll()
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -56,7 +56,7 @@ namespace FeedBuffApplicatie.DAL
         }
 
 
-        public void InsertStudent(Student student, Boolean refreshData = false)
+        public void Insert(Student student, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -78,11 +78,11 @@ namespace FeedBuffApplicatie.DAL
                 }
             }
 
-            if (refreshData) GetAllStudents();
+            if (refreshData) GetAll();
         }
 
 
-        public void UpdateStudent(Student student, Boolean refreshData = false)
+        public void Update(Student student, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -103,11 +103,11 @@ namespace FeedBuffApplicatie.DAL
                     finally { connection.Dispose(); }
                 }
             }
-            if (refreshData) GetAllStudents();
+            if (refreshData) GetAll();
         }
 
 
-        public void DeleteStudent(Student student, Boolean refreshData = false)
+        public void Delete(Student student, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
@@ -123,7 +123,7 @@ namespace FeedBuffApplicatie.DAL
                     finally { connection.Dispose(); }
                 }
             }
-            if (refreshData) GetAllStudents();
+            if (refreshData) GetAll();
         }
 
     }
