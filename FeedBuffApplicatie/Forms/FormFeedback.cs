@@ -15,12 +15,19 @@ namespace FeedBuffApplicatie.Forms
     public partial class FormFeedback : Form
     {
         FeedbackDAL feedbackDal;
+        AssignmentDAL assignmentDal;
+        SupervisorDAL supervisorDAL;
+        StudentDAL studentDAL;
+
 
         public FormFeedback(DALs dals)
         {
             InitializeComponent();
 
             this.feedbackDal = dals.feedbackDAL; // Contains all of the dals inside
+            this.assignmentDal = dals.assignmentDAL;
+            this.supervisorDAL = dals.supervisorDAL;
+            this.studentDAL = dals.studentDAL;
 
             RefreshAndPopulate();
             SetEditMode(false);
@@ -28,14 +35,39 @@ namespace FeedBuffApplicatie.Forms
 
         private void RefreshAndPopulate()
         {
+            assignmentDal.GetAll();
             feedbackDal.GetAll();
 
-            var bindingSource1 = new BindingSource();
-            bindingSource1.DataSource = this.feedbackDal.Feedbacks;
+            // ASSIGNMENT COMBO BOX
+            var bindingSourceAssignment = new BindingSource();
+            bindingSourceAssignment.DataSource = this.assignmentDal.Assignments;
 
-            //comboBoxCategory.DataSource = bindingSource1.DataSource;
-            //comboBoxCategory.DisplayMember = "Name";
-            //comboBoxCategory.ValueMember = "Id";
+            comboBoxAssignment.DataSource = bindingSourceAssignment.DataSource;
+            comboBoxAssignment.DisplayMember = "Description";
+            comboBoxAssignment.ValueMember = "Id";
+
+
+            // STUDENT COMBO BOX
+            var bindingSourceStudent = new BindingSource();
+            bindingSourceStudent.DataSource = this.studentDAL.Students;
+
+            comboBoxStudent.DataSource = bindingSourceStudent.DataSource;
+            comboBoxStudent.DisplayMember = "Firstname";
+            comboBoxStudent.ValueMember = "Id";
+
+
+            // SUPERVISOR COMBO BOX
+            var bindingSourceSupervisor = new BindingSource();
+            bindingSourceSupervisor.DataSource = this.supervisorDAL.Supervisors;
+
+            comboBoxSupervisor.DataSource = bindingSourceSupervisor.DataSource;
+            comboBoxSupervisor.DisplayMember = "Firstname";
+            comboBoxSupervisor.ValueMember = "Id";
+            // AND REVIEWED BY
+            comboBoxReviewedBy.DataSource = bindingSourceSupervisor.DataSource;
+            comboBoxReviewedBy.DisplayMember = "Firstname";
+            comboBoxReviewedBy.ValueMember = "Id";
+
 
             PopulateDataGridView();
         }
