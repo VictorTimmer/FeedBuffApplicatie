@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,8 @@ namespace FeedBuffApplicatie.DAL
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT * FROM User ORDER BY id", connection))
+                // User is a SQL keyword - according to https://stackoverflow.com/questions/695578/creating-table-names-that-are-reserved-words-keywords-in-ms-sql-server#comment27809885_695590
+                using (SqlCommand command = new SqlCommand("SELECT * FROM [User] ORDER BY id", connection))
                 {
                     using (SqlDataReader columns = command.ExecuteReader())
                     {
@@ -36,6 +38,8 @@ namespace FeedBuffApplicatie.DAL
 
                         try
                         {
+                            // This while is important - please don't remove it!
+                            while (columns.Read())
                             {
                                 this.Users.Add(new User(
                                     Int32.Parse(columns[0].ToString()),
