@@ -60,6 +60,7 @@
     <Compile Include="DAL\FeedupDAL.cs" />
     <Compile Include="DAL\FeedforwardDAL.cs" />
     <Compile Include="DAL\FeeditemDAL.cs" />
+    <Compile Include="DAL\SupervisorDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Forms\FormAssignment.cs">

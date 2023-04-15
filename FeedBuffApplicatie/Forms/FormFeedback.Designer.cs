@@ -34,21 +34,21 @@
             this.buttonDeleteFeedback = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvFeedback = new System.Windows.Forms.DataGridView();
             this.comboBoxAssignment = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxNotes = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dateTimePickerCreatedDate = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxCompleted = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxSupervisor = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.richTextBoxContents = new System.Windows.Forms.RichTextBox();
+            this.comboBoxStudent = new System.Windows.Forms.ComboBox();
+            this.comboBoxReviewedBy = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeedback)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             this.buttonCreateFeedback.TabIndex = 11;
             this.buttonCreateFeedback.Text = "Create";
             this.buttonCreateFeedback.UseVisualStyleBackColor = true;
+            this.buttonCreateFeedback.Click += new System.EventHandler(this.buttonCreateFeedback_Click);
             // 
             // buttonSaveFeedback
             // 
@@ -81,6 +82,7 @@
             this.buttonDiscardFeedback.TabIndex = 9;
             this.buttonDiscardFeedback.Text = "Discard";
             this.buttonDiscardFeedback.UseVisualStyleBackColor = true;
+            this.buttonDiscardFeedback.Click += new System.EventHandler(this.buttonDiscardFeedback_Click);
             // 
             // buttonDeleteFeedback
             // 
@@ -91,6 +93,7 @@
             this.buttonDeleteFeedback.TabIndex = 8;
             this.buttonDeleteFeedback.Text = "Delete";
             this.buttonDeleteFeedback.UseVisualStyleBackColor = true;
+            this.buttonDeleteFeedback.Click += new System.EventHandler(this.buttonDeleteFeedback_Click);
             // 
             // label1
             // 
@@ -112,13 +115,6 @@
             this.label2.Text = "Reviewed By";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(409, 271);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 15;
-            // 
             // dgvFeedback
             // 
             this.dgvFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -126,6 +122,7 @@
             this.dgvFeedback.Name = "dgvFeedback";
             this.dgvFeedback.Size = new System.Drawing.Size(576, 162);
             this.dgvFeedback.TabIndex = 16;
+            this.dgvFeedback.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedback_CellClick);
             // 
             // comboBoxAssignment
             // 
@@ -145,13 +142,13 @@
             this.label3.Text = "Assignment";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // richTextBox1
+            // richTextBoxNotes
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(93, 303);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(214, 45);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
+            this.richTextBoxNotes.Location = new System.Drawing.Point(93, 303);
+            this.richTextBoxNotes.Name = "richTextBoxNotes";
+            this.richTextBoxNotes.Size = new System.Drawing.Size(214, 45);
+            this.richTextBoxNotes.TabIndex = 19;
+            this.richTextBoxNotes.Text = "";
             // 
             // label4
             // 
@@ -171,21 +168,21 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Created Date";
             // 
-            // dateTimePicker2
+            // dateTimePickerCreatedDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(93, 188);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(214, 20);
-            this.dateTimePicker2.TabIndex = 22;
+            this.dateTimePickerCreatedDate.Location = new System.Drawing.Point(93, 188);
+            this.dateTimePickerCreatedDate.Name = "dateTimePickerCreatedDate";
+            this.dateTimePickerCreatedDate.Size = new System.Drawing.Size(214, 20);
+            this.dateTimePickerCreatedDate.TabIndex = 22;
             // 
-            // checkBox1
+            // checkBoxCompleted
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(93, 221);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxCompleted.AutoSize = true;
+            this.checkBoxCompleted.Location = new System.Drawing.Point(93, 221);
+            this.checkBoxCompleted.Name = "checkBoxCompleted";
+            this.checkBoxCompleted.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxCompleted.TabIndex = 23;
+            this.checkBoxCompleted.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -223,21 +220,29 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Contents";
             // 
-            // richTextBox2
+            // richTextBoxContents
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(93, 246);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(214, 45);
-            this.richTextBox2.TabIndex = 27;
-            this.richTextBox2.Text = "";
+            this.richTextBoxContents.Location = new System.Drawing.Point(93, 246);
+            this.richTextBoxContents.Name = "richTextBoxContents";
+            this.richTextBoxContents.Size = new System.Drawing.Size(214, 45);
+            this.richTextBoxContents.TabIndex = 27;
+            this.richTextBoxContents.Text = "";
             // 
-            // comboBox1
+            // comboBoxStudent
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(409, 213);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 21);
-            this.comboBox1.TabIndex = 29;
+            this.comboBoxStudent.FormattingEnabled = true;
+            this.comboBoxStudent.Location = new System.Drawing.Point(409, 213);
+            this.comboBoxStudent.Name = "comboBoxStudent";
+            this.comboBoxStudent.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxStudent.TabIndex = 29;
+            // 
+            // comboBoxReviewedBy
+            // 
+            this.comboBoxReviewedBy.FormattingEnabled = true;
+            this.comboBoxReviewedBy.Location = new System.Drawing.Point(409, 270);
+            this.comboBoxReviewedBy.Name = "comboBoxReviewedBy";
+            this.comboBoxReviewedBy.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxReviewedBy.TabIndex = 30;
             // 
             // FormFeedback
             // 
@@ -245,21 +250,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxReviewedBy);
+            this.Controls.Add(this.comboBoxStudent);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBoxContents);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBoxSupervisor);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.checkBoxCompleted);
+            this.Controls.Add(this.dateTimePickerCreatedDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTextBoxNotes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxAssignment);
             this.Controls.Add(this.dgvFeedback);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCreateFeedback);
@@ -284,20 +289,20 @@
         private System.Windows.Forms.Button buttonDeleteFeedback;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgvFeedback;
         private System.Windows.Forms.ComboBox comboBoxAssignment;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxNotes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCreatedDate;
+        private System.Windows.Forms.CheckBox checkBoxCompleted;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxSupervisor;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxContents;
+        private System.Windows.Forms.ComboBox comboBoxStudent;
+        private System.Windows.Forms.ComboBox comboBoxReviewedBy;
     }
 }
