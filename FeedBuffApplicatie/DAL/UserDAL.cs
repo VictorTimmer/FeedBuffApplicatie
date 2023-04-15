@@ -40,7 +40,9 @@ namespace FeedBuffApplicatie.DAL
                                 this.Users.Add(new User(
                                     Int32.Parse(columns[0].ToString()),
                                     columns[1].ToString(),
-                                    columns[2].ToString()
+                                    columns[2].ToString(),
+                                    columns[3].ToString(),
+                                    columns[4].ToString()
                                 ));
                             }
                         }
@@ -59,12 +61,14 @@ namespace FeedBuffApplicatie.DAL
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("INSERT INTO User VALUES(@firstname, @creationTime, @reflection, @priority, @completed, @supergoal)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO User VALUES(@firstname, @lastname, @username, @password)", connection))
                 {
                     try
                     {
                         command.Parameters.AddWithValue("@firstname", user.Firstname);
-                        command.Parameters.AddWithValue("@Lastname", user.Lastname);
+                        command.Parameters.AddWithValue("@lastname", user.Lastname);
+                        command.Parameters.AddWithValue("@username", user.Username);
+                        command.Parameters.AddWithValue("@password", user.Password);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
@@ -81,13 +85,15 @@ namespace FeedBuffApplicatie.DAL
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE Studygoal SET firstname = @firstname, lastname = @lastname WHERE id = @id", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE User SET firstname = @firstname, lastname = @lastname, username = @username, password = @password WHERE id = @id", connection))
                 {
                     try
                     {
                         command.Parameters.AddWithValue("@id", user.Id);
-                        command.Parameters.AddWithValue("@description", user.Firstname);
-                        command.Parameters.AddWithValue("@deadline", user.Lastname);
+                        command.Parameters.AddWithValue("@firstname", user.Firstname);
+                        command.Parameters.AddWithValue("@lastname", user.Lastname);
+                        command.Parameters.AddWithValue("@username", user.Username);
+                        command.Parameters.AddWithValue("@password", user.Password);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException error) { throw error; }
