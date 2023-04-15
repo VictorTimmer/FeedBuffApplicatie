@@ -13,10 +13,10 @@ namespace FeedBuffApplicatie.DAL
 
         public string connectionString = "Data Source=" + computerName + "\\SQLEXPRESS;Initial Catalog=FeedBUFF;Integrated Security=True";
         
-        //public AssignmentDAL assignmentDAL;
-        //public UserDAL userDAL;
-        //public StudentDAL studentDAL;
-
+        public AssignmentDAL assignmentDAL;
+        public UserDAL userDAL;
+        public StudentDAL studentDAL;
+        public SupervisorDAL supervisorDAL;
 
         public FeeditemDAL feeditemDAL;
 
@@ -28,9 +28,12 @@ namespace FeedBuffApplicatie.DAL
 
         public DALs() 
         {
-            //this.assignmentDAL = new AssignmentDAL(connectionString, this);
-            //this.userDAL = new UserDAL(connectionString, this);
-            //this.studentDAL = new StudentDAL(connectionString, this);
+            // THE ORDER MATTERS HERE - PLEASE DONT EDIT (only add to the list)
+            this.assignmentDAL = new AssignmentDAL(connectionString, this);
+
+            this.userDAL = new UserDAL(connectionString, this);
+            this.studentDAL = new StudentDAL(connectionString, this);
+            this.supervisorDAL = new SupervisorDAL(connectionString, this);
 
             this.feeditemDAL = new FeeditemDAL(connectionString, this);
             this.feedforwardDAL = new FeedforwardDAL(connectionString, this);
