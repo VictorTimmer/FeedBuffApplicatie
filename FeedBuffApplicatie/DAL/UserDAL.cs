@@ -78,7 +78,29 @@ namespace FeedBuffApplicatie.DAL
             if (refreshData) GetAll();
         }
 
+        public int InsertAndReturnId(User user, Boolean refreshData = false)
+        {
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
 
+                using (SqlCommand command = new SqlCommand("INSERT INTO User OUTPUT INSERTED.ID VALUES(@firstname, @lastname, @username, @password)", connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@firstname", user.Firstname);
+                        command.Parameters.AddWithValue("@lastname", user.Lastname);
+                        command.Parameters.AddWithValue("@username", user.Username);
+                        command.Parameters.AddWithValue("@password", user.Password);
+                        int modified = (int)command.ExecuteScalar();
+                        return modified;
+                    }
+                    catch (SqlException error) { throw error; }
+                    finally { connection.Dispose(); }
+                }
+            }
+            if (refreshData) GetAll();
+        }
 
         public void Update(User user, Boolean refreshData = false)
         {
