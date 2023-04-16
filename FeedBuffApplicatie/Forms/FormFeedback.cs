@@ -208,5 +208,28 @@ namespace FeedBuffApplicatie.Forms
                     SelectRowFromDataGridView(e.RowIndex);
             }
         }
+
+        private void buttonSaveFeedback_Click(object sender, EventArgs e)
+        {
+            if (selectedItem != null)
+            {
+                var newItem = new Feedback(
+                    selectedItem.Id,
+                    dateTimePickerCreatedDate.Value,
+                    checkBoxCompleted.Checked,
+                    (int)comboBoxReviewedBy.SelectedValue,
+                    (int)comboBoxAssignment.SelectedValue,
+                    (int)comboBoxSupervisor.SelectedValue,
+                    (int)comboBoxStudent.SelectedValue,
+                    richTextBoxContents.Text,
+                    selectedItem.FeeditemId,
+                    richTextBoxNotes.Text
+                );
+
+                feedbackDal.Update(newItem);
+                selectedItem = newItem;
+                RefreshAndPopulate();
+            }
+        }
     }
 }

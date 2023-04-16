@@ -72,6 +72,7 @@
             this.buttonSaveFeedback.TabIndex = 10;
             this.buttonSaveFeedback.Text = "Save";
             this.buttonSaveFeedback.UseVisualStyleBackColor = true;
+            this.buttonSaveFeedback.Click += new System.EventHandler(this.buttonSaveFeedback_Click);
             // 
             // buttonDiscardFeedback
             // 
