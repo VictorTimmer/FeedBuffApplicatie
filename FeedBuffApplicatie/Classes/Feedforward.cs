@@ -14,14 +14,8 @@ namespace FeedBuffApplicatie.Classes
 
         public Feedforward(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId) : base(feeditemId, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
+            Id = id;
             FeeditemId = feeditemId;
         }
-
-
-        public void AddFeedforward()
-        {
-        
-        }
-
     }
 }

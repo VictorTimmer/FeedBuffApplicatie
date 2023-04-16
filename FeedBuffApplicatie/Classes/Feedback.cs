@@ -15,17 +15,10 @@ namespace FeedBuffApplicatie.Classes
 
         public Feedback(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId, string notes) : base(feeditemId, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
+            Id = id;
             FeeditemId = feeditemId;
             Notes = notes;
         }
-
-
-        public void AddFeedback()
-        { 
-        
-        }
-
-
 
     }
 }

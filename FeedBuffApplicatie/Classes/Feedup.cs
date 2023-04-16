@@ -16,6 +16,7 @@ namespace FeedBuffApplicatie.Classes
 
         public Feedup(int id, DateTime creationDate, bool completed, int approvedBy, int assignmentId, int supervisorId, int studentId, string contents, int feeditemId, int priority, string reflection) : base(feeditemId, creationDate, completed, approvedBy, assignmentId, supervisorId, studentId, contents)
         {
+            Id = id;
             FeeditemId = feeditemId;
             Priority = priority;
             Reflection = reflection;
