@@ -45,7 +45,7 @@
             // checkBoxCompleted
             // 
             this.checkBoxCompleted.AutoSize = true;
-            this.checkBoxCompleted.Location = new System.Drawing.Point(94, 282);
+            this.checkBoxCompleted.Location = new System.Drawing.Point(94, 337);
             this.checkBoxCompleted.Name = "checkBoxCompleted";
             this.checkBoxCompleted.Size = new System.Drawing.Size(15, 14);
             this.checkBoxCompleted.TabIndex = 21;
@@ -54,7 +54,7 @@
             // labelCompleted
             // 
             this.labelCompleted.AutoSize = true;
-            this.labelCompleted.Location = new System.Drawing.Point(17, 282);
+            this.labelCompleted.Location = new System.Drawing.Point(22, 337);
             this.labelCompleted.Name = "labelCompleted";
             this.labelCompleted.Size = new System.Drawing.Size(57, 13);
             this.labelCompleted.TabIndex = 20;
@@ -62,7 +62,7 @@
             // 
             // dateTimePickerDate
             // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(94, 237);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(94, 301);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerDate.TabIndex = 19;
@@ -70,7 +70,7 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(12, 237);
+            this.labelDate.Location = new System.Drawing.Point(31, 304);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(49, 13);
             this.labelDate.TabIndex = 18;
@@ -79,7 +79,7 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(17, 192);
+            this.labelDescription.Location = new System.Drawing.Point(20, 272);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(60, 13);
             this.labelDescription.TabIndex = 17;
@@ -87,7 +87,7 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(105, 186);
+            this.textBoxDescription.Location = new System.Drawing.Point(94, 269);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(200, 20);
             this.textBoxDescription.TabIndex = 16;
@@ -96,10 +96,11 @@
             // 
             this.dgvAssignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssignment.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgvAssignment.Location = new System.Drawing.Point(20, 12);
+            this.dgvAssignment.Location = new System.Drawing.Point(12, 12);
             this.dgvAssignment.Name = "dgvAssignment";
-            this.dgvAssignment.Size = new System.Drawing.Size(561, 150);
+            this.dgvAssignment.Size = new System.Drawing.Size(576, 238);
             this.dgvAssignment.TabIndex = 15;
+            this.dgvAssignment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedback_CellClick);
             // 
             // buttonCreateAssignement
             // 
@@ -109,6 +110,7 @@
             this.buttonCreateAssignement.TabIndex = 14;
             this.buttonCreateAssignement.Text = "Create";
             this.buttonCreateAssignement.UseVisualStyleBackColor = true;
+            this.buttonCreateAssignement.Click += new System.EventHandler(this.buttonCreateFeedback_Click);
             // 
             // buttonSaveAssignement
             // 
@@ -118,6 +120,7 @@
             this.buttonSaveAssignement.TabIndex = 13;
             this.buttonSaveAssignement.Text = "Save";
             this.buttonSaveAssignement.UseVisualStyleBackColor = true;
+            this.buttonSaveAssignement.Click += new System.EventHandler(this.buttonSaveFeedback_Click);
             // 
             // buttonDiscardAssignement
             // 
@@ -127,6 +130,7 @@
             this.buttonDiscardAssignement.TabIndex = 12;
             this.buttonDiscardAssignement.Text = "Discard";
             this.buttonDiscardAssignement.UseVisualStyleBackColor = true;
+            this.buttonDiscardAssignement.Click += new System.EventHandler(this.buttonDiscardFeedback_Click);
             // 
             // buttonDeleteAssignement
             // 
@@ -136,6 +140,7 @@
             this.buttonDeleteAssignement.TabIndex = 11;
             this.buttonDeleteAssignement.Text = "Delete";
             this.buttonDeleteAssignement.UseVisualStyleBackColor = true;
+            this.buttonDeleteAssignement.Click += new System.EventHandler(this.buttonDeleteFeedback_Click);
             // 
             // FormAssignment
             // 
