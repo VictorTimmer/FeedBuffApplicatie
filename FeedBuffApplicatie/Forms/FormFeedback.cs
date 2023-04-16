@@ -94,9 +94,9 @@ namespace FeedBuffApplicatie.Forms
                     item.CreationDate,
                     item.Completed,
                     item.ApprovedBy,
-                    item.StudentId,
                     item.AssignmentId,
                     item.SupervisorId,
+                    item.StudentId,
                     item.Contents
                 );
             }
