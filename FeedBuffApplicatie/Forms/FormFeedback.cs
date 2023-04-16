@@ -145,6 +145,12 @@ namespace FeedBuffApplicatie.Forms
             dateTimePickerCreatedDate.Value = DateTime.Now;
             checkBoxCompleted.Checked = false;
             // TODO Comboboxes
+
+            //comboBoxAssignment.SelectedIndex = 0;
+            //comboBoxReviewedBy.SelectedIndex = 0;
+            //comboBoxStudent.SelectedIndex = 0;
+            //comboBoxSupervisor.SelectedIndex = 0;
+
             richTextBoxNotes.Text = "";
             richTextBoxContents.Text = "";
             SetEditMode(false);
