@@ -30,5 +30,10 @@ namespace FeedBuffApplicatie.Classes
             Contents = contents;
         }
 
+
+        public void AddFeedItem()
+        {
+        
+        }
     }
 }

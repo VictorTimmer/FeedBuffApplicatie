@@ -27,5 +27,11 @@ namespace FeedBuffApplicatie.Classes
             Password = password;
         }
 
+
+
+        public void AddUser() 
+        { 
+        
+        }   
     }
 }

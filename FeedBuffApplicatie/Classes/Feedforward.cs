@@ -17,5 +17,11 @@ namespace FeedBuffApplicatie.Classes
             FeeditemId = feeditemId;
         }
 
+
+        public void AddFeedforward()
+        {
+        
+        }
+
     }
 }

@@ -20,5 +20,10 @@ namespace FeedBuffApplicatie.Classes
             Priority = priority;
             Reflection = reflection;
         }
+
+        public void AddFeedup()
+        { 
+        
+        }
     }
 }

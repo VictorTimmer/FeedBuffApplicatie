@@ -18,5 +18,11 @@ namespace FeedBuffApplicatie.Classes
             UserId = userId;
             StudentNumber = studentNumber;
         }
+
+
+        public void AddStudent()
+        { 
+        
+        }
     }
 }

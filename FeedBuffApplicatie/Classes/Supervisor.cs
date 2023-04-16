@@ -18,5 +18,12 @@ namespace FeedBuffApplicatie.Classes
             UserId = userId;
             WorkNumber = workNumber;
         }
+
+
+        public void AddSupervisor()
+        { 
+
+        
+        }
     }
 }

@@ -82,8 +82,6 @@ namespace FeedBuffApplicatie.DAL
             if (refreshData) GetAll();
         }
 
-
-
         public void Update(Assignment assignment, Boolean refreshData = false)
         {
             using (SqlConnection connection = new SqlConnection(this.connectionString))
