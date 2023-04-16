@@ -178,21 +178,30 @@ namespace FeedBuffApplicatie.Forms
 
         private void SelectRowFromDataGridView(int Index)
         {
-            // Data row into a Customer instance with casting (keep it tidy for later)
-            selectedItem = new Feedback(
-                (int)dgvFeedback.Rows[Index].Cells[2].Value,
-                (DateTime)dgvFeedback.Rows[Index].Cells[3].Value,
-                (bool)dgvFeedback.Rows[Index].Cells[4].Value,
-                (int)dgvFeedback.Rows[Index].Cells[5].Value,
-                (int)dgvFeedback.Rows[Index].Cells[6].Value,
-                (int)dgvFeedback.Rows[Index].Cells[7].Value,
-                (int)dgvFeedback.Rows[Index].Cells[8].Value,
-                (string)dgvFeedback.Rows[Index].Cells[9].Value,
-                (int)dgvFeedback.Rows[Index].Cells[0].Value,
-                (string)dgvFeedback.Rows[Index].Cells[1].Value
-            );
+            // The "header" can be pressed (cauing the below code to break) so make sure that -1 uis not alowed
+            if (Index != -1)
+            {
+                // Data row into a Customer instance with casting (keep it tidy for later)
+                selectedItem = new Feedback(
+                    (int)dgvFeedback.Rows[Index].Cells[2].Value,
+                    (DateTime)dgvFeedback.Rows[Index].Cells[3].Value,
+                    (bool)dgvFeedback.Rows[Index].Cells[4].Value,
+                    (int)dgvFeedback.Rows[Index].Cells[5].Value,
+                    (int)dgvFeedback.Rows[Index].Cells[6].Value,
+                    (int)dgvFeedback.Rows[Index].Cells[7].Value,
+                    (int)dgvFeedback.Rows[Index].Cells[8].Value,
+                    (string)dgvFeedback.Rows[Index].Cells[9].Value,
+                    (int)dgvFeedback.Rows[Index].Cells[0].Value,
+                    (string)dgvFeedback.Rows[Index].Cells[1].Value
+                );
 
-            PopulateInputs(selectedItem);
+                //Debug.WriteLine(Index);
+                //foreach (DataGridViewCell cell in (dgvFeedback.Rows[Index].Cells))
+                //{
+                //    Debug.WriteLine(cell.Value);
+                //}
+                PopulateInputs(selectedItem);
+            }
         }
 
 
