@@ -15,8 +15,10 @@ namespace FeedBuffApplicatie.Forms
 {
     public partial class FormFeedback : Form
     {
+        FeeditemDAL feeditemDal;
         FeedbackDAL feedbackDal;
         AssignmentDAL assignmentDal;
+        UserDAL userDAL;
         SupervisorDAL supervisorDAL;
         StudentDAL studentDAL;
 
@@ -26,8 +28,11 @@ namespace FeedBuffApplicatie.Forms
         {
             InitializeComponent();
 
-            this.feedbackDal = dals.feedbackDAL; // Contains all of the dals inside
+            // Contains all of the dals inside
+            this.feedbackDal = dals.feedbackDAL;
+            this.feeditemDal = dals.feeditemDAL;
             this.assignmentDal = dals.assignmentDAL;
+            this.userDAL = dals.userDAL;
             this.supervisorDAL = dals.supervisorDAL;
             this.studentDAL = dals.studentDAL;
 
@@ -38,7 +43,11 @@ namespace FeedBuffApplicatie.Forms
         private void RefreshAndPopulate()
         {
             assignmentDal.GetAll();
+            feeditemDal.GetAll();
             feedbackDal.GetAll();
+            userDAL.GetAll();
+            supervisorDAL.GetAll();
+            studentDAL.GetAll();
 
             // ASSIGNMENT COMBO BOX
             var bindingSourceAssignment = new BindingSource();
