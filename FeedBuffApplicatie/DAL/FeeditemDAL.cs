@@ -125,7 +125,7 @@ namespace FeedBuffApplicatie.DAL
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE " + tableName + " SET creationDate = @creationDate, completed = @completed, approvedBy = @approvedBy, reviewedBy = @reviewedBy, studentId = @studentId, assignmentId = @assignmentId, supervisorId = @supervisorId, type = @type WHERE id = @id", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE " + tableName + " SET creationDate = @creationDate, completed = @completed, approvedBy = @approvedBy, assignmentId = @assignmentId, supervisorId = @supervisorId, studentId = @studentId WHERE id = @id", connection))
                 {
                     try
                     {
