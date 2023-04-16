@@ -162,7 +162,7 @@ namespace FeedBuffApplicatie.Forms
 
             lblTabTitle.Text = "FEEDUP";
             this.pnlContent.Controls.Clear();
-            FormFeedup formFeedup = new FormFeedup() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormFeedup formFeedup = new FormFeedup(dals) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formFeedup);
             formFeedup.Show();
         }
@@ -195,7 +195,7 @@ namespace FeedBuffApplicatie.Forms
 
             lblTabTitle.Text = "ASSIGNMENT";
             this.pnlContent.Controls.Clear();
-            FormAssignment formAssignment = new FormAssignment() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormAssignment formAssignment =  new FormAssignment(dals) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formAssignment);
             formAssignment.Show();
         }
