@@ -70,6 +70,10 @@ namespace FeedBuffApplicatie.DAL
 
         public void Insert(Feedforward feedforward, Boolean refreshData = false)
         {
+            // Make the changes to the base table
+            var feeditemId = dals.feeditemDAL.InsertAndReturnId(feedforward, refreshData);
+            feedforward.FeeditemId = feeditemId;
+
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
@@ -93,6 +97,11 @@ namespace FeedBuffApplicatie.DAL
 
         public void Update(Feedforward feedforward, Boolean refreshData = false)
         {
+            var feeditem = (Feeditem)feedforward.Clone();
+            feeditem.Id = feedforward.FeeditemId;
+
+            dals.feeditemDAL.Update(feeditem, refreshData);
+
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();

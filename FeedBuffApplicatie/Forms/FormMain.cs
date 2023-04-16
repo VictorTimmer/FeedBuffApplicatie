@@ -184,7 +184,7 @@ namespace FeedBuffApplicatie.Forms
 
             lblTabTitle.Text = "FEEDFORWARD";
             this.pnlContent.Controls.Clear();
-            FormFeedforward formFeedforward = new FormFeedforward() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormFeedforward formFeedforward = new FormFeedforward(dals) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(formFeedforward);
             formFeedforward.Show();
         }
