@@ -74,8 +74,13 @@ namespace FeedBuffApplicatie.Forms
             comboBoxSupervisor.DataSource = bindingSourceSupervisor.DataSource;
             comboBoxSupervisor.DisplayMember = "Firstname";
             comboBoxSupervisor.ValueMember = "Id";
+
             // AND REVIEWED BY
-            comboBoxReviewedBy.DataSource = bindingSourceSupervisor.DataSource;
+            var bindingSourceReviewedBy = new BindingSource();
+            bindingSourceReviewedBy.DataSource = this.supervisorDAL.Supervisors;
+
+            comboBoxReviewedBy.BindingContext = new BindingContext();
+            comboBoxReviewedBy.DataSource = bindingSourceReviewedBy.DataSource;
             comboBoxReviewedBy.DisplayMember = "Firstname";
             comboBoxReviewedBy.ValueMember = "Id";
 
@@ -112,6 +117,15 @@ namespace FeedBuffApplicatie.Forms
 
             dgvFeedback.DataSource = dt;
 
+            // Note - thought i needed this to solve the "header" issue wchih I solved another way :)
+            //// Disable sorting for all collumns (taken from https://stackoverflow.com/a/4502448)
+            //foreach (DataGridViewColumn column in dgvFeedback.Columns)
+            //{
+            //    Debug.Write(3);
+            //    column.SortMode = DataGridViewColumnSortMode.Programmatic;
+            //}
+
+            // Used to be here to remove the "id" col from dgv
             //dgvFeedback.Columns[0].Visible = false;
         }
 
@@ -141,7 +155,20 @@ namespace FeedBuffApplicatie.Forms
         {
             dateTimePickerCreatedDate.Value = item.CreationDate;
             checkBoxCompleted.Checked = item.Completed;
-            // TODO Comboboxes
+
+            // Combobox comboBoxSupervisor
+            comboBoxSupervisor.SelectedItem = this.supervisorDAL.Supervisors.Find(element => element.Id == item.SupervisorId);
+
+            // Combobox comboBoxReviewedBy - aka ApprovedBy
+            comboBoxReviewedBy.SelectedItem = this.supervisorDAL.Supervisors.Find(element => element.Id == item.ApprovedBy);
+
+            // Combobox comboBoxAssignment
+            comboBoxAssignment.SelectedItem = this.assignmentDal.Assignments.Find(element => element.Id == item.AssignmentId);
+
+            // Combobox comboBoxStudent - aka StudentId
+            comboBoxStudent.SelectedItem = this.studentDAL.Students.Find(element => element.Id == item.StudentId);
+
+
             richTextBoxNotes.Text = item.Notes;
             richTextBoxContents.Text = item.Contents;
 
@@ -156,13 +183,12 @@ namespace FeedBuffApplicatie.Forms
                     -1,
                     dateTimePickerCreatedDate.Value,
                     checkBoxCompleted.Checked,
-                    1,
-                    1,
-                    1,
-                    1,
-                    // TODO: Fix
+                    (int)comboBoxReviewedBy.SelectedValue,
+                    (int)comboBoxAssignment.SelectedValue,
+                    (int)comboBoxSupervisor.SelectedValue,
+                    (int)comboBoxStudent.SelectedValue,
                     richTextBoxContents.Text,
-                    1,
+                    -1,
                     richTextBoxNotes.Text
                 )
             );
