@@ -71,6 +71,9 @@ namespace FeedBuffApplicatie.DAL
 
         public void Insert(Feedback feedback, Boolean refreshData = false)
         {
+            var feeditemId = dals.feeditemDAL.InsertAndReturnId(feedback, refreshData);
+            feedback.FeeditemId = feeditemId;
+
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
