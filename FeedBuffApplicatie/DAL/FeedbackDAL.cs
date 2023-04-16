@@ -98,6 +98,13 @@ namespace FeedBuffApplicatie.DAL
 
         public void Update(Feedback feedback, Boolean refreshData = false)
         {
+            var feeditem = (Feeditem)feedback.Clone();
+            feeditem.Id = feedback.FeeditemId;
+
+            Debug.WriteLine(feedback);
+            Debug.WriteLine(feeditem);
+            
+            dals.feeditemDAL.Update(feeditem, refreshData);
             using (SqlConnection connection = new SqlConnection(this.connectionString))
             {
                 connection.Open();
