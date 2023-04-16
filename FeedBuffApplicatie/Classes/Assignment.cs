@@ -11,10 +11,10 @@ namespace FeedBuffApplicatie.Classes
         public int Id { get; } 
         public string Description { get; set; }
         public DateTime Deadline { get; set; }
-        public string Completed {get; set; }
+        public bool Completed {get; set; }
 
 
-        public Assignment(int id, string description, DateTime deadline, string completed)
+        public Assignment(int id, string description, DateTime deadline, bool completed)
         {
             Id = id;
             Description = description;

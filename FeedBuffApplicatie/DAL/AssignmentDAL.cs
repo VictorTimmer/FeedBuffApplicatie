@@ -47,7 +47,7 @@ namespace FeedBuffApplicatie.DAL
                                     Int32.Parse(columns[0].ToString()),
                                     columns[1].ToString(),
                                     DateTime.Parse(columns[2].ToString()),
-                                    columns[3].ToString()
+                                    bool.Parse(columns[3].ToString())
                                 ));
                             }
                         }
