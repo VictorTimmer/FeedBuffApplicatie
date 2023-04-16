@@ -91,6 +91,33 @@ namespace FeedBuffApplicatie.DAL
             if (refreshData) GetAll();
         }
 
+        public int InsertAndReturnId(Feeditem feeditem, Boolean refreshData = false)
+        {
+            using (SqlConnection connection = new SqlConnection(this.connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("INSERT INTO " + tableName + " OUTPUT INSERTED.ID VALUES(@creationDate, @completed, @approvedBy, @assignmentId, @supervisorId, @studentId, @contents)", connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@creationDate", feeditem.CreationDate);
+                        command.Parameters.AddWithValue("@completed", feeditem.Completed);
+                        command.Parameters.AddWithValue("@approvedBy", feeditem.ApprovedBy);
+                        command.Parameters.AddWithValue("@assignmentId", feeditem.AssignmentId);
+                        command.Parameters.AddWithValue("@supervisorId", feeditem.SupervisorId);
+                        command.Parameters.AddWithValue("@studentId", feeditem.StudentId);
+                        command.Parameters.AddWithValue("@contents", feeditem.Contents);
+                        int modified = (int)command.ExecuteScalar();
+                        return modified;
+                    }
+                    catch (SqlException error) { throw error; }
+                    finally { connection.Dispose(); }
+                }
+            }
+            if (refreshData) GetAll();
+        }
+
 
 
         public void Update(Feeditem feeditem, Boolean refreshData = false)
