@@ -9,9 +9,9 @@ namespace FeedBuffApplicatie.DAL
 {
     public class DALs
     {
-        private static string computerName = "DESKTOP-KT5DRA5";
+        private static string computerName = "MSI";
 
-        public string connectionString = "Data Source=" + computerName + "\\SQLEXPRESS;Initial Catalog=FeedBUFF;Integrated Security=True";
+        public string connectionString = "Data Source=.;Initial Catalog=FeedBUFF;Integrated Security=True";
         
         public AssignmentDAL assignmentDAL;
         public UserDAL userDAL;

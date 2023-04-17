@@ -191,6 +191,7 @@
             // btnAssignment
             // 
             this.btnAssignment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAssignment.FlatAppearance.BorderSize = 0;
             this.btnAssignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignment.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignment.ForeColor = System.Drawing.Color.Black;

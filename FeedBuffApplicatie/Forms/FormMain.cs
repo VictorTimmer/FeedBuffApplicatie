@@ -22,6 +22,7 @@ namespace FeedBuffApplicatie.Forms
             RoundButton(btnFeedforward, 10);
             RoundButton(btnFeedup, 10);
             RoundButton(btnFeedback, 10);
+            RoundButton(btnAssignment, 10);
             ButtonColorReset(btnDashboard);
 
             lblTabTitle.Text = "DASHBOARD";
